@@ -6,6 +6,6 @@
 
 <style></style>
 
-<!-- 
+<!--  no hacemos nada aqui
 **noHints**
 -->

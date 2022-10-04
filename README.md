@@ -1,3 +1,14 @@
+04/10 Martes: Decido la mañana a terminar el LAB de WikiCountries visionando la grabación de la clase.
+Por la tarde estudio el proyecto, tanto la información disponible en el student portal como el boiler-plate para entender las necesidades y funcionalidad de cada sección.
+Diseño de la página web.
+
+05/10 Miercoles:
+
+
+
+
+
+
 # final-boiler-plate
 
 This template should help get you started developing the final project running on Vue 3 with the composition API, Pinia as a state management tool, vue router, vite and lastly Supabase running on the backend.
