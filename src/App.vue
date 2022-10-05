@@ -1,3 +1,6 @@
+
+<!-- no tocar nada -->
+
 <script setup>
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";

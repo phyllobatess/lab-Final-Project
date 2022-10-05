@@ -6,8 +6,10 @@ export const useTaskStore = defineStore("tasks", {
   state: () => ({
     tasks: null,
   }),
+  // actions: metodos o funciones que  se encargan de generar la lógica del programa
   actions: {
-    async fetchTasks() {
+    //
+    async fetchTasks() { // funcion que se encarga de llamar a las tareas por parte del usuario
       const { data: tasks } = await supabase
         .from("tasks")
         .select("*")
@@ -17,7 +19,7 @@ export const useTaskStore = defineStore("tasks", {
     },
     // New code
     async addTask(title, description) {
-      console.log(useUserStore().user.id);
+      console.log(useUserStore().user.id); // llama al user.js para apuntar al ID del usuario que le pertecene la tarea.
       const { data, error } = await supabase.from("tasks").insert([
         {
           user_id: useUserStore().user.id,

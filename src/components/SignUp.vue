@@ -6,7 +6,7 @@
 
   <form @submit.prevent="signUp">
     <div class="">
-      <label class="" for="">Email</label>
+      <label class="" for="">Email </label>
       <input
         class=""
         type="email"
@@ -16,7 +16,7 @@
       />
     </div>
     <div class="">
-      <label class="" for="">Password</label>
+      <label class="" for="">Password </label>
       <input
         class=""
         type="password"
@@ -26,7 +26,7 @@
       />
     </div>
     <div class="">
-      <label class="" for="">Confirm Password</label>
+      <label class="" for="">Confirm Password </label>
       <input
         class=""
         type="password"
@@ -62,7 +62,7 @@ const errorMsg = ref(null);
 const redirect = useRouter();
 // function to SignUp user to supaBase with a timeOut() method for showing the error
 async function signUp() {
-  if (password.value === confirmPassword.value) {
+  if (password.value === confirmPassword.value) { //comprueba que "password" sea = a "confirm password"
     try {
       await useUserStore().signUp(email.value, password.value);
       // if (error) throw error;
