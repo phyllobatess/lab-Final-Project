@@ -1,60 +1,62 @@
 <template>
   <div class="header">
-    <div class>
-      <div class="start">
+    <div class="start">
+      <div>
         <img class="logoImg" src="/img/corona.jpeg" alt="corona" />
         <div class="loginText">Log in to TasKING</div>
-        <p>Wether you are organizing 5 to 500 tasks, we've got you.</p>
       </div>
-
-      <!-- <PersonalRouter :route="route" :buttonText="buttonText" /> -->
-
-      <p v-if="errorMsg" class="">
-        {{ errorMsg }}
+      <p class="wetherText">
+        Wether you are organizing 5 to 500 tasks, we've got you.
       </p>
-      <form @submit.prevent="signIn">
-        <div class="email">
-          <label class="" for="">Email</label>
+    </div>
+
+    <!-- <PersonalRouter :route="route" :buttonText="buttonText" /> -->
+
+    <p v-if="errorMsg" class="">
+      {{ errorMsg }}
+    </p>
+    <form @submit.prevent="signIn">
+      <div class="email">
+        <label class="" for="">Email</label>
+        <input
+          class="placeholder"
+          type="email"
+          placeholder="Enter your email here"
+          v-model="email"
+          id="email"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="" for="">Password</label>
+
+        <div class="">
           <input
             class="placeholder"
-            type="email"
-            placeholder="Enter your email here"
-            v-model="email"
-            id="email"
+            :type="passwordFieldType"
+            onpaste="return false"
+            placeholder="************"
+            v-model="password"
+            id="password"
           />
-        </div>
-        <div class="mb-4">
-          <label class="" for="">Password</label>
-
-          <div class="">
-            <input
-              class="placeholder"
-              :type="passwordFieldType"
-              onpaste="return false"
-              placeholder="************"
-              v-model="password"
-              id="password"
+          <span class="">
+            <EyeIcon
+              :class="[passwordFieldIcon]"
+              @click.prevent="hidePassword = !hidePassword"
             />
-            <span class="">
-              <EyeIcon
-                :class="[passwordFieldIcon]"
-                @click.prevent="hidePassword = !hidePassword"
-              />
-            </span>
-          </div>
+          </span>
         </div>
+      </div>
 
-        <button class="signInButton" type="submit">Sign In</button>
-        <p class="">
-          <span class="">Don’t have an account? </span>
+      <button class="signInButton" type="submit">Sign In</button>
+      <p class="">
+        <span class="textDont">Don’t have an account? </span>
 
-          <PersonalRouter :route="route" :buttonText="buttonText" />
-        </p>
-      </form>
-    </div>
-    <div>
-      <img class="escritorioImg" src="/img/escritorio.jpg" alt="" />
-    </div>
+        <PersonalRouter :route="route" :buttonText="buttonText" />
+      </p>
+    </form>
+  </div>
+  <div>
+    <img class="escritorioImg" src="/img/escritorio.jpg" alt="" />
   </div>
 </template>
 
@@ -105,7 +107,7 @@ const signIn = async () => {
 };
 </script>
 
-<style>
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Source+Sans+Pro&display=swap");
 * {
   font-family: "Abyssinica SIL", serif;
@@ -114,26 +116,32 @@ const signIn = async () => {
 .start {
   display: flex;
   flex-direction: column;
-  justify-content: right;
-  align-content: center;
 }
 
 .email {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
 }
 
 .logoImg {
   height: 100px;
   width: 100px;
-  margin-bottom: 0%;
   margin-top: 100px;
+  margin-left: 180px;
 }
 
 .loginText {
-  font-size: 40px;
-  margin-top: 0px;
-  margin-bottom: 50px;
+  font-size: 45px;
+  margin-left: 35px;
+
+  margin-bottom: 15px;
+}
+
+.wetherText {
+  margin-bottom: 60px;
+  font-size: 18px;
+  opacity: 0.7;
 }
 
 .form {
@@ -147,18 +155,25 @@ const signIn = async () => {
 }
 
 .placeholder {
-  width: 225px;
+  width: 425px;
   margin-bottom: 20px;
+  box-shadow: 2px 2px 2px 4px #57699a;
+  border: 0;
+  padding: 10px 10px 10px 10px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 .signInButton {
-  margin-top: 10px;
-  width: 230px;
-  background-color: rgba(12, 0, 147, 0.661);
+  margin-top: 25px;
+  margin-bottom: 20px;
+  width: 448px;
+  background-color: #57699a;
   color: white;
   border: 0px;
   border-radius: 10px;
   padding: 10px 0px 10px 0;
+  font-size: 15px;
 }
 
 .escritorioImg {
@@ -171,6 +186,10 @@ const signIn = async () => {
 
 .header {
   display: flex;
-  margin-left: 0px;
+  flex-direction: column;
+  margin-right: 120px;
+}
+.textDont {
+  margin-left: 80px;
 }
 </style>
