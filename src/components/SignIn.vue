@@ -189,7 +189,8 @@ const signIn = async () => {
 .header {
   display: flex;
   flex-direction: column;
-  margin-right: 120px;
+  margin-right: 10vw;
+  margin-left: 10vw;
 }
 .textDont {
   margin-left: 80px;

@@ -1,51 +1,51 @@
 <template>
   <div class="header">
     <div class="start">
-      <div>
-        <img class="logoImg" src="/img/corona.jpeg" alt="corona" />
-        <div class="loginText">Start from today</div>
-      </div>
+      <img class="logoImg" src="/img/corona.jpeg" alt="corona" />
+      <div class="loginText">Start from today</div>
     </div>
-  </div>
-  <!-- <PersonalRouter :route="route" :buttonText="buttonText" /> -->
 
-  <form @submit.prevent="signUp">
-    <div class="email">
-      <label class="" for="">Email </label>
-      <input
-        class="placeholder"
-        type="email"
-        placeholder="Enter your email here"
-        v-model="email"
-        id="email"
-      />
-    </div>
-    <div class="flex">
-      <label class="" for="">Password </label>
-      <input
-        class="placeholder"
-        type="password"
-        placeholder="************"
-        v-model="password"
-        id="password"
-      />
-    </div>
-    <div class="mb-4">
-      <label class="flex" for="">Confirm Password </label>
-      <input
-        class="placeholder"
-        type="password"
-        placeholder="************"
-        v-model="confirmPassword"
-        id="confirmPassword"
-      />
-    </div>
-    <button class="signInButton" type="submit">Sign Up</button>
-    <p class="">
-      <span class="textDont">Have an account? </span>
-      <PersonalRouter :route="route" :buttonText="buttonText" />
-    </p>
-  </form>
+    <!-- <PersonalRouter :route="route" :buttonText="buttonText" /> -->
+
+    <form @submit.prevent="signUp">
+      <div class="email">
+        <label class="" for="">Email </label>
+        <input
+          class="placeholder"
+          type="email"
+          placeholder="Enter your email here"
+          v-model="email"
+          id="email"
+        />
+      </div>
+      <div class="flex">
+        <label class="" for="">Password </label>
+        <input
+          class="placeholder"
+          type="password"
+          placeholder="************"
+          v-model="password"
+          id="password"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="flex" for="">Confirm Password </label>
+        <input
+          class="placeholder"
+          type="password"
+          placeholder="************"
+          v-model="confirmPassword"
+          id="confirmPassword"
+        />
+      </div>
+      <button class="signInButton" type="submit">Sign Up</button>
+      <p class="">
+        <span class="textDont">Have an account? </span>
+        <PersonalRouter :route="route" :buttonText="buttonText" />
+      </p>
+    </form>
+  </div>
+
   <div>
     <img class="escritorioImg" src="/img/iStock-869283118.jpg" alt="" />
   </div>
@@ -175,7 +175,7 @@ async function signUp() {
 .header {
   display: flex;
   flex-direction: column;
-  margin-right: 120px;
+  margin-left: 10vw;
 }
 .textDont {
   margin-left: 80px;

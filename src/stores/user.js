@@ -36,6 +36,7 @@ export const useUserStore = defineStore("user", {
       }
     },
 
+    //Funcion que hace log out, extraida y parametrizada de SupaBase, se utilizará desde el Nav con el botón "Log Out"
     async signOut() {
       const { user, error } = await supabase.auth.signOut();
     },
