@@ -3,11 +3,9 @@
 </template>
 
 <script setup>
-// const emit = defineEmits([
-//   ENTER-EMITS-HERE
-// ])
-
-// const props = defineProps(["ENTER-PROP-HERE"]);
+import { onMounted } from "@vue/runtime-core";
+import { useTaskStore } from "../stores/task.js";
+import { ref } from "vue";
 </script>
 
 <style></style>

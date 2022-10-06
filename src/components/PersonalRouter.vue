@@ -1,5 +1,5 @@
 <template>
-  <router-link class="prueba" :to="route">{{ buttonText }}</router-link>
+  <router-link class="color" :to="route">{{ buttonText }}</router-link>
 </template>
 
 <script setup>
@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <style>
-.prueba {
+.color {
   color: rgba(12, 0, 147, 0.661);
   text-decoration: none;
   margin-left: 10px;

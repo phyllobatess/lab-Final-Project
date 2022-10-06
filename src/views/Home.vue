@@ -1,11 +1,34 @@
 <template>
   <Nav />
+  <NewTask @emitAddTask="addTask" />
+  <TaskItem />
 </template>
 
 <script setup>
 import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
+import TaskItem from "../components/TaskItem.vue";
 import { ref } from "vue";
+import NewTask from "../components/NewTask.vue";
+import { useTaskStore } from "../stores/task.js";
+
+// const emit = defineEmits([ENTER - EMITS - HERE]);
+
+const useTasks = useTaskStore(); // funcion que está en el store task.js
+
+const tareasSupabase = ref([]);
+
+async function getTasks() {
+  tareasSupabase.value = await useTasks.fetchTasks();
+  console.log(tareasSupabase.value);
+}
+console.log(tareasSupabase);
+getTasks();
+
+async function addTask(tittle, description) {
+  await useTasks.addTask(tittle, description);
+  getTasks();
+}
 </script>
 
 <style></style>
