@@ -38,6 +38,7 @@
             v-model="password"
             id="password"
           />
+
           <span class="">
             <EyeIcon
               :class="[passwordFieldIcon]"
@@ -56,7 +57,7 @@
     </form>
   </div>
   <div>
-    <img class="escritorioImg" src="/img/escritorio.jpg" alt="" />
+    <img class="escritorioImg" src="/img/escritorio.jpg" alt="Image Sign-In" />
   </div>
 </template>
 
@@ -174,6 +175,7 @@ const signIn = async () => {
   border-radius: 10px;
   padding: 10px 0px 10px 0;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .escritorioImg {
@@ -191,5 +193,6 @@ const signIn = async () => {
 }
 .textDont {
   margin-left: 80px;
+  opacity: 0.6;
 }
 </style>

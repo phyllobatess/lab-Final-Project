@@ -3,7 +3,7 @@
     <div class="start">
       <div>
         <img class="logoImg" src="/img/corona.jpeg" alt="corona" />
-        <div class="loginText">Start with us from today</div>
+        <div class="loginText">Start from today</div>
       </div>
     </div>
   </div>
@@ -119,6 +119,7 @@ async function signUp() {
 .loginText {
   font-size: 45px;
   margin-left: 35px;
+  margin-right: 40px;
 
   margin-bottom: 15px;
 }
@@ -152,6 +153,7 @@ async function signUp() {
 .signInButton {
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-right: 500px;
   width: 448px;
   background-color: #57699a;
   color: white;
@@ -159,6 +161,7 @@ async function signUp() {
   border-radius: 10px;
   padding: 10px 0px 10px 0;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .escritorioImg {
