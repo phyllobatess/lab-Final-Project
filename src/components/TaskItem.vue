@@ -1,11 +1,31 @@
 <template>
-  <div>Task Item Component</div>
+  <div>
+    <h2>{{ task.title }}</h2>
+    <h2>{{ task.description }}</h2>
+    <p>{{ task.is_complete }}</p>
+
+    <div>
+      <button @click="deleteTask">Delete Task</button>
+      <button @click="completeTask">Complete Task</button>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { onMounted } from "@vue/runtime-core";
-import { useTaskStore } from "../stores/task.js";
 import { ref } from "vue";
+
+const props = defineProps(["task"]);
+const emits = defineEmits(["deleteChild", "completeChild"]);
+
+function deleteTask() {
+  emits("deleteChild", props.task.id);
+  console.log("I have been clicked");
+}
+
+function completeTask() {
+  emits("completeChild", props.task.id);
+  console.log("I have been clicked to chedk complete");
+}
 </script>
 
 <style></style>

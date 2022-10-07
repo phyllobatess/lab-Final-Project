@@ -3,10 +3,10 @@
     <div class="start">
       <div>
         <img class="logoImg" src="/img/corona.jpeg" alt="corona" />
-        <div class="loginText">Log in to TasKING</div>
+        <div class="loginText">Log into tasKing</div>
       </div>
       <p class="wetherText">
-        Wether you are organizing 5 to 500 tasks, we've got you.
+        Whether you are organizing 5 to 500 tasks, we got you.
       </p>
     </div>
 

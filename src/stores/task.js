@@ -3,19 +3,23 @@ import { ref } from "vue";
 import { supabase } from "../supabase";
 import { useUserStore } from "./user";
 
+// export const useUserSTore2 = defineStore("nombreDeLaTienda", () => {
+//   la logica como tal
+// })
+
 export const useTaskStore = defineStore("tasks", () => {
-  const taskes = ref([]);
+  const tasks = ref([]);
 
   async function fetchTasks() {
     // funcion que se encarga de llamar a las tareas por parte del usuario
-    const { data: tasks } = await supabase
+    const { data: supaTasks } = await supabase
       .from("tasks")
       .select("*")
       .order("id", { ascending: false }); // le cambio a true para que las muestre por orden
-    taskes.value = tasks;
-    return tasks;
+    tasks.value = supaTasks;
+    return tasks.value;
   }
-  // New code
+
   async function addTask(title, description) {
     console.log(useUserStore().user.id); // llama al user.js para apuntar al ID del usuario que le pertecene la tarea.
     const { data, error } = await supabase.from("tasks").insert([
@@ -27,5 +31,19 @@ export const useTaskStore = defineStore("tasks", () => {
       },
     ]);
   }
-  return { taskes, fetchTasks, addTask };
+
+  async function deleteTask(id) {
+    const { data, error } = await supabase
+      .from("tasks")
+      .delete()
+      .match({ id: id });
+  }
+
+  async function completeTask(id) {
+    const { data, error } = await supabase
+      .from("tasks")
+      .update({ is_complete: !this.is_complete })
+      .match({ id: id });
+  }
+  return { tasks, fetchTasks, addTask, deleteTask, completeTask };
 });

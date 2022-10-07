@@ -2,7 +2,7 @@
   <div class="navContainer">
     <div class="flex2">
       <img class="coronaImg" src="/img/corona.jpeg" alt="" />
-      <div>TasKING</div>
+      <div>tasKing</div>
     </div>
 
     <button @click="logOut" class="logOutButton">Log out</button>

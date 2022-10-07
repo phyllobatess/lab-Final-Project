@@ -1,33 +1,47 @@
 <template>
   <Nav />
+  <h1>helloooo</h1>
   <NewTask @emitAddTask="addTask" />
-  <TaskItem />
+
+  <TaskItem
+    v-for="task in useTasks.tasks"
+    :key="task"
+    :task="task"
+    @deleteChild="deleteFather"
+    @completeChild="completeFather"
+  />
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
+import { useTaskStore } from "../stores/task.js";
 import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
-import TaskItem from "../components/TaskItem.vue";
-import { ref } from "vue";
 import NewTask from "../components/NewTask.vue";
-import { useTaskStore } from "../stores/task.js";
-
-// const emit = defineEmits([ENTER - EMITS - HERE]);
+import TaskItem from "../components/TaskItem.vue";
 
 const useTasks = useTaskStore(); // funcion que está en el store task.js
 
-const tareasSupabase = ref([]);
+let jarko = ref(false);
 
-async function getTasks() {
-  tareasSupabase.value = await useTasks.fetchTasks();
-  console.log(tareasSupabase.value);
-}
-console.log(tareasSupabase);
-getTasks();
+onMounted(() => {
+  useTasks.fetchTasks();
+  console.log(useTasks.fetchTasks());
+});
 
 async function addTask(tittle, description) {
   await useTasks.addTask(tittle, description);
-  getTasks();
+  getTasks(); // llamamos de nuevo a la funcion getTasks() para que "actualice" el valor del array con la nueva tarea añadida
+}
+
+async function deleteFather(taskId) {
+  await useTasks.deleteTask(taskId);
+  useTasks.fetchTasks();
+}
+
+async function completeFather(taskId) {
+  await useTasks.completeTask(taskId);
+  useTasks.fetchTasks();
 }
 </script>
 

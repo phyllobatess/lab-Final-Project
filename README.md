@@ -25,4 +25,5 @@ Diseño de la página web.
 📚 05/10 Miercoles: Termino styling del Sign-in y del Sign-up.
 Comienzo con la funcionalidad del botón Log-out pero no termina de funcionar.
 
-📚 06/10 Jueves:
+📚 06/10 Jueves: Styling del Nav-bar.
+Termino la lógica del NewTask.Vue.
