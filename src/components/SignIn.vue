@@ -3,7 +3,7 @@
     <div class="start">
       <div>
         <img class="logoImg" src="/img/corona.jpeg" alt="corona" />
-        <div class="loginText">Log into tasKing</div>
+        <div class="loginText">Log in to tasKing</div>
       </div>
       <p class="wetherText">
         Whether you are organizing 5 to 500 tasks, we got you.
@@ -94,6 +94,7 @@ const signIn = async () => {
   try {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value); //
+
     // redirects user to the homeView
     redirect.push({ path: "/" }); // nos lleva al home si es correcto
   } catch (error) {

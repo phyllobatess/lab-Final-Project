@@ -1,15 +1,23 @@
 <template>
-  <Nav />
-  <h1>helloooo</h1>
-  <NewTask @emitAddTask="addTask" />
+  <Nav class="nav" />
+  <div class="fondo">
+    <div class="container">
+      <div class="leftSide">
+        <NewTask class="newTask" @emitAddTask="addTask" />
+      </div>
 
-  <TaskItem
-    v-for="task in useTasks.tasks"
-    :key="task"
-    :task="task"
-    @deleteChild="deleteFather"
-    @completeChild="completeFather"
-  />
+      <div class="rightSide">
+        <TaskItem
+          class="taskItem"
+          v-for="task in useTasks.tasks"
+          :key="task"
+          :task="task"
+          @deleteChild="deleteFather"
+          @completeChild="completeFather"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -31,7 +39,7 @@ onMounted(() => {
 
 async function addTask(tittle, description) {
   await useTasks.addTask(tittle, description);
-  getTasks(); // llamamos de nuevo a la funcion getTasks() para que "actualice" el valor del array con la nueva tarea añadida
+  useTasks.fetchTasks(); // llamamos de nuevo a la store para que actualice la lista y añada la tarea.
 }
 
 async function deleteFather(taskId) {
@@ -45,7 +53,39 @@ async function completeFather(taskId) {
 }
 </script>
 
-<style></style>
+<style scoped>
+.newTask {
+  margin-left: 20px;
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+
+  width: 100%;
+}
+
+.leftSide {
+  width: 30%;
+  border-right: 4px solid #57699a;
+}
+.fondo {
+  background-color: #f2f4fc;
+  height: 100%;
+}
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.taskItem {
+  margin-left: 20px;
+  margin-top: 100px;
+}
+</style>
 
 <!-- 
 **Hints**

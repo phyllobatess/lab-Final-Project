@@ -1,12 +1,19 @@
 <template>
-  <div>
-    <h2>{{ task.title }}</h2>
-    <h2>{{ task.description }}</h2>
+  <div class="flex">
+    <p class="titulo">{{ task.title }}</p>
+    <p class="descripcion">{{ task.description }}</p>
     <p>{{ task.is_complete }}</p>
 
-    <div>
-      <button @click="deleteTask">Delete Task</button>
-      <button @click="completeTask">Complete Task</button>
+    <div class="buttons">
+      <div>
+        <button class="button" @click="completeTask">✔️</button>
+      </div>
+      <div>
+        <button class="button" @click="deleteTask">❌</button>
+      </div>
+      <div>
+        <button class="button">✏️</button>
+      </div>
     </div>
   </div>
 </template>
@@ -22,13 +29,50 @@ function deleteTask() {
   console.log("I have been clicked");
 }
 
+// function editTask() {
+//   const myValues = {
+//     id: props.task.id,
+//       newTitle:
+//     newDescription:
+//   }
+//   emits("e;l-nombre-de-tu-emit", myValues)
+// }
+
 function completeTask() {
   emits("completeChild", props.task.id);
   console.log("I have been clicked to chedk complete");
 }
 </script>
 
-<style></style>
+<style>
+.button {
+  padding: 5px 5px 5px 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 20px;
+  width: 100%;
+  padding: 1px 0px 20px 20px;
+}
+.titulo {
+  font-size: 30px;
+  margin-bottom: 2px;
+}
+
+.descripcion {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+</style>
 
 <!-- 
 **Hints**

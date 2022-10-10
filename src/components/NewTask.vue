@@ -1,14 +1,18 @@
 <template>
   <div>
-    <h2>Add a New Task</h2>
+    <h1 class="addTask">Add a New Task</h1>
     <div>
-      <input v-model="title" type="text" placeholder="Task name" />
+      <div>
+        <input v-model="title" type="text" placeholder="Task name" />
+      </div>
       <input
         v-model="description"
         type="text"
         placeholder="Task's description"
       />
-      <button @click.prevent="addNewTask">Add</button>
+      <div>
+        <button @click.prevent="addNewTask">Add</button>
+      </div>
     </div>
     <div>
       <h3 v-if="errorNoValue">{{ errorMessage }}</h3>
@@ -42,4 +46,8 @@ function addNewTask() {
 }
 </script>
 
-<style></style>
+<style>
+.addTask {
+  color: #57699a;
+}
+</style>

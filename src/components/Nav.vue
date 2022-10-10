@@ -2,10 +2,13 @@
   <div class="navContainer">
     <div class="flex2">
       <img class="coronaImg" src="/img/corona.jpeg" alt="" />
-      <div>tasKing</div>
+      <div class="title">tasKing</div>
     </div>
-
-    <button @click="logOut" class="logOutButton">Log out</button>
+    <div class="logOut">
+      <p class="welcome">Welcome</p>
+      <p>{{ nameEmail }}</p>
+      <button @click="logOut" class="logOutButton">Log out</button>
+    </div>
   </div>
 </template>
 
@@ -20,8 +23,11 @@ const userStore = useUserStore();
 // constant to save a variable that will get the user from store with a computed function imported from vue
 
 // constant that calls user email from the useUSerStore
-
+const userEmail = ref(userStore.user.email);
+// console.log(userStore.user.email);
 // constant that saves the user email and cleans out the @client from the user
+const arr = userEmail.value.indexOf("@");
+const nameEmail = ref(userEmail.value.slice(0, arr));
 
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();
@@ -43,6 +49,7 @@ const logOut = async () => {
   margin-top: 25px;
   margin-bottom: 20px;
   margin-right: 20px;
+  margin-left: 20px;
   width: 90px;
   background-color: #57699a;
   color: white;
@@ -53,13 +60,18 @@ const logOut = async () => {
   cursor: w-resize;
 }
 .navContainer {
-  margin-bottom: 20px;
+  margin-bottom: 90px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 3px solid #57699a;
+  border-bottom: 5px double #57699a;
+  background-color: white;
+}
+
+.title {
+  font-size: 50px;
 }
 
 .flex2 {
@@ -71,5 +83,16 @@ const logOut = async () => {
 .coronaImg {
   height: 20%;
   width: 20%;
+}
+.logOut {
+  display: flex;
+  align-items: center;
+  cursor: auto;
+  color: #57699a;
+  font-size: 20px;
+}
+.welcome {
+  color: green;
+  margin-right: 10px;
 }
 </style>

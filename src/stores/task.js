@@ -3,10 +3,6 @@ import { ref } from "vue";
 import { supabase } from "../supabase";
 import { useUserStore } from "./user";
 
-// export const useUserSTore2 = defineStore("nombreDeLaTienda", () => {
-//   la logica como tal
-// })
-
 export const useTaskStore = defineStore("tasks", () => {
   const tasks = ref([]);
 
