@@ -30,7 +30,7 @@ import TaskItem from "../components/TaskItem.vue";
 
 const useTasks = useTaskStore(); // funcion que está en el store task.js
 
-let jarko = ref(false);
+// let jarko = ref(false);
 
 onMounted(() => {
   useTasks.fetchTasks();

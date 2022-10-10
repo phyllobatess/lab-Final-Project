@@ -18,7 +18,7 @@
           id="email"
         />
       </div>
-      <div class="flex">
+      <div class="email">
         <label class="" for="">Password </label>
         <input
           class="placeholder"
@@ -28,8 +28,8 @@
           id="password"
         />
       </div>
-      <div class="mb-4">
-        <label class="flex" for="">Confirm Password </label>
+      <div class="email">
+        <label for="">Confirm Password </label>
         <input
           class="placeholder"
           type="password"
@@ -106,7 +106,7 @@ async function signUp() {
 .email {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .logoImg {
@@ -122,22 +122,6 @@ async function signUp() {
   margin-right: 40px;
 
   margin-bottom: 15px;
-}
-
-.wetherText {
-  margin-bottom: 60px;
-  font-size: 18px;
-  opacity: 0.7;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0;
-}
-.input {
-  color: black;
-  margin-bottom: 1rem;
 }
 
 .placeholder {
@@ -179,9 +163,6 @@ async function signUp() {
 }
 .textDont {
   margin-left: 80px;
-}
-.flex {
-  display: flex;
-  flex-direction: column;
+  opacity: 0.6;
 }
 </style>

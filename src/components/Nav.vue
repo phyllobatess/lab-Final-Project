@@ -4,8 +4,12 @@
       <img class="coronaImg" src="/img/corona.jpeg" alt="" />
       <div class="title">tasKing</div>
     </div>
-    <div class="logOut">
-      <p class="welcome">Welcome</p>
+    <div class="email">
+      <img
+        class="icono"
+        src="/img/group_FILL0_wght400_GRAD0_opsz48.png"
+        alt="icono persona"
+      />
       <p>{{ nameEmail }}</p>
       <button @click="logOut" class="logOutButton">Log out</button>
     </div>
@@ -19,9 +23,10 @@ import { RouterLink, RouterView } from "vue-router";
 import { useUserStore } from "../stores/user";
 
 //constant to save a variable that will hold the use router method
-const userStore = useUserStore();
-// constant to save a variable that will get the user from store with a computed function imported from vue
+const redirect = useRouter();
 
+// constant to save a variable that will get the user from store with a computed function imported from vue
+const userStore = useUserStore();
 // constant that calls user email from the useUSerStore
 const userEmail = ref(userStore.user.email);
 // console.log(userStore.user.email);
@@ -30,7 +35,7 @@ const arr = userEmail.value.indexOf("@");
 const nameEmail = ref(userEmail.value.slice(0, arr));
 
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
-const redirect = useRouter();
+
 const logOut = async () => {
   try {
     await userStore.signOut();
@@ -45,10 +50,14 @@ const logOut = async () => {
 </script>
 
 <style scoped>
+.icono {
+  margin-right: 9px;
+  height: 35px;
+}
 .logOutButton {
   margin-top: 25px;
   margin-bottom: 20px;
-  margin-right: 20px;
+  margin-right: 40px;
   margin-left: 20px;
   width: 90px;
   background-color: #57699a;
@@ -56,7 +65,7 @@ const logOut = async () => {
   border: 0px;
   border-radius: 10px;
   padding: 10px 0px 10px 0;
-  font-size: 15px;
+  font-size: 16px;
   cursor: w-resize;
 }
 .navContainer {
@@ -84,12 +93,12 @@ const logOut = async () => {
   height: 20%;
   width: 20%;
 }
-.logOut {
+.email {
   display: flex;
   align-items: center;
   cursor: auto;
   color: #57699a;
-  font-size: 20px;
+  font-size: 19px;
 }
 .welcome {
   color: green;
