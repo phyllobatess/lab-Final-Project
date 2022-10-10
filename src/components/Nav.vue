@@ -1,6 +1,6 @@
 <template>
   <div class="navContainer">
-    <div class="flex2">
+    <div class="tasking">
       <img class="coronaImg" src="/img/corona.jpeg" alt="" />
       <div class="title">tasKing</div>
     </div>
@@ -50,6 +50,9 @@ const logOut = async () => {
 </script>
 
 <style scoped>
+* {
+  background-color: white;
+}
 .icono {
   margin-right: 9px;
   height: 35px;
@@ -83,11 +86,12 @@ const logOut = async () => {
   font-size: 50px;
 }
 
-.flex2 {
+.tasking {
   display: flex;
   align-items: center;
   font-size: 30px;
   padding-bottom: 0px;
+  margin-left: 20px;
 }
 .coronaImg {
   height: 20%;
@@ -99,9 +103,5 @@ const logOut = async () => {
   cursor: auto;
   color: #57699a;
   font-size: 19px;
-}
-.welcome {
-  color: green;
-  margin-right: 10px;
 }
 </style>

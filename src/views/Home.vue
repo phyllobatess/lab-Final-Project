@@ -2,11 +2,11 @@
   <Nav class="nav" />
   <div class="fondo">
     <div class="container">
-      <div class="leftSide">
+      <div>
         <NewTask class="newTask" @emitAddTask="addTask" />
       </div>
 
-      <div class="rightSide">
+      <div>
         <TaskItem
           class="taskItem"
           v-for="task in useTasks.tasks"
@@ -54,22 +54,22 @@ async function completeFather(taskId) {
 </script>
 
 <style scoped>
+* {
+  background-color: #f2f4fc;
+}
 .newTask {
-  margin-left: 20px;
-  margin-top: 30%;
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .container {
   display: flex;
+  flex-direction: column;
 
   width: 100%;
 }
 
-.leftSide {
-  width: 30%;
-  border-right: 4px solid #57699a;
-}
 .fondo {
   background-color: #f2f4fc;
   height: 100%;
@@ -82,8 +82,9 @@ async function completeFather(taskId) {
 }
 
 .taskItem {
-  margin-left: 20px;
-  margin-top: 100px;
+  margin-top: 5%;
+  margin-right: 20%;
+  margin-left: 20%;
 }
 </style>
 

@@ -1,17 +1,26 @@
 <template>
   <div>
     <h1 class="addTask">Add a New Task</h1>
-    <div>
+
+    <div class="add">
       <div>
-        <input v-model="title" type="text" placeholder="Task name" />
+        <input
+          class="enter"
+          v-model="title"
+          type="text"
+          placeholder="Task name"
+        />
       </div>
       <input
+        class="enter"
         v-model="description"
         type="text"
         placeholder="Task's description"
       />
       <div>
-        <button @click.prevent="addNewTask">Add</button>
+        <button class="button-87" role="button" @click.prevent="addNewTask">
+          Add
+        </button>
       </div>
     </div>
     <div>
@@ -48,6 +57,54 @@ function addNewTask() {
 
 <style>
 .addTask {
-  color: #57699a;
+  color: orange;
+}
+.add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enter {
+  margin: 2px 2px 2px 2px;
+  padding: 10px 10px 10px 10px;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.button-87 {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
 }
 </style>

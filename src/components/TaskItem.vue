@@ -1,6 +1,10 @@
 <template>
   <div class="flex">
-    <p class="titulo">{{ task.title }}</p>
+    <div class="centro">
+      <img class="taskImg" src="/img/descarga.png" alt="task" />
+
+      <p class="titulo">{{ task.title }}</p>
+    </div>
     <p class="descripcion">{{ task.description }}</p>
     <p>{{ task.is_complete }}</p>
 
@@ -8,11 +12,13 @@
       <div>
         <button class="button" @click="completeTask">✔️</button>
       </div>
-      <div>
-        <button class="button" @click="deleteTask">❌</button>
-      </div>
+
       <div>
         <button class="button">✏️</button>
+      </div>
+
+      <div>
+        <button class="button" @click="deleteTask">❌</button>
       </div>
     </div>
   </div>
@@ -44,33 +50,53 @@ function completeTask() {
 }
 </script>
 
-<style>
+<style scoped>
+* {
+  background-color: white;
+}
 .button {
   padding: 5px 5px 5px 5px;
   margin-right: 5px;
   cursor: pointer;
+  border: none;
+  height: 8px;
 }
 
 .flex {
   display: flex;
   flex-direction: column;
   background-color: white;
-  margin-top: 20px;
-  width: 100%;
-  padding: 1px 0px 20px 20px;
+  padding: 1px 1px 20px 20px;
+  border-radius: 10px;
+  box-shadow: 6px 6px 11px -2px #8d90c4;
+}
+.centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .titulo {
   font-size: 30px;
   margin-bottom: 2px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .descripcion {
   font-size: 20px;
   margin-bottom: 0px;
+  margin-top: 0px;
 }
 .buttons {
   display: flex;
   justify-content: space-around;
+  margin-top: 0px;
+}
+.taskImg {
+  height: 4%;
+  width: 4%;
+  margin-top: 10px;
 }
 </style>
 
