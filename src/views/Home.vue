@@ -14,6 +14,7 @@
           :task="task"
           @deleteChild="deleteFather"
           @completeChild="completeFather"
+          @editChild="editFather"
         />
       </div>
     </div>
@@ -49,6 +50,11 @@ async function deleteFather(taskId) {
 
 async function completeFather(taskId) {
   await useTasks.completeTask(taskId);
+  useTasks.fetchTasks();
+}
+
+async function editFather(title, description, id) {
+  await useTasks.editTask(title, description, id);
   useTasks.fetchTasks();
 }
 </script>

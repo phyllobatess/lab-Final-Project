@@ -7,14 +7,29 @@
     </div>
     <p class="descripcion">{{ task.description }}</p>
     <p>{{ task.is_complete }}</p>
-
+    <div v-if="readyForEdit">
+      <input
+        v-model="newTitle"
+        placeholder="Enter new title"
+        type="text"
+      /><input
+        v-model="newDescription"
+        placeholder="Enter new desription"
+        type="text"
+      />
+    </div>
     <div class="buttons">
       <div>
         <button class="button" @click="completeTask">✔️</button>
       </div>
 
       <div>
-        <button class="button">✏️</button>
+        <button class="button" v-if="!readyForEdit" @click="changeParams">
+          Edit
+        </button>
+        <button class="button" v-if="readyForEdit" @click="editTask">
+          Confirm Edit
+        </button>
       </div>
 
       <div>
@@ -28,7 +43,10 @@
 import { ref } from "vue";
 
 const props = defineProps(["task"]);
-const emits = defineEmits(["deleteChild", "completeChild"]);
+const emits = defineEmits(["deleteChild", "completeChild", "editChild"]);
+const readyForEdit = ref(false);
+const newTitle = ref("");
+const newDescription = ref("");
 
 function deleteTask() {
   emits("deleteChild", props.task.id);
@@ -47,6 +65,16 @@ function deleteTask() {
 function completeTask() {
   emits("completeChild", props.task.id);
   console.log("I have been clicked to chedk complete");
+}
+
+function editTask() {
+  emits("editChild", newTitle.value, newDescription.value, props.task.id);
+  readyForEdit.value = false;
+  console.log("Prueba edit");
+}
+
+function changeParams() {
+  readyForEdit.value = true;
 }
 </script>
 
