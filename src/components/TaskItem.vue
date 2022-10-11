@@ -14,7 +14,7 @@
         type="text"
       /><input
         v-model="newDescription"
-        placeholder="Enter new desription"
+        placeholder="Enter new description"
         type="text"
       />
     </div>
@@ -25,7 +25,7 @@
 
       <div>
         <button class="button" v-if="!readyForEdit" @click="changeParams">
-          Edit
+          ✏️
         </button>
         <button class="button" v-if="readyForEdit" @click="editTask">
           Confirm Edit
@@ -45,22 +45,13 @@ import { ref } from "vue";
 const props = defineProps(["task"]);
 const emits = defineEmits(["deleteChild", "completeChild", "editChild"]);
 const readyForEdit = ref(false);
-const newTitle = ref("");
+const newTitle = ref(""); // variables que nos creamos para añadir los nuevos valores de titulo y descripcion al hacer funcion EDIT.
 const newDescription = ref("");
 
 function deleteTask() {
   emits("deleteChild", props.task.id);
   console.log("I have been clicked");
 }
-
-// function editTask() {
-//   const myValues = {
-//     id: props.task.id,
-//       newTitle:
-//     newDescription:
-//   }
-//   emits("e;l-nombre-de-tu-emit", myValues)
-// }
 
 function completeTask() {
   emits("completeChild", props.task.id);
@@ -83,7 +74,7 @@ function changeParams() {
   background-color: white;
 }
 .button {
-  padding: 5px 5px 5px 5px;
+  padding: 5px 5px 0px 5px;
   margin-right: 5px;
   cursor: pointer;
   border: none;
