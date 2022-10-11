@@ -27,3 +27,21 @@ Comienzo con la funcionalidad del botón Log-out pero no termina de funcionar.
 
 📚 06/10 Jueves: Styling del Nav-bar.
 Termino la lógica del NewTask.Vue.
+
+📚 07/10 Viernes: Corrección de algun error en los estilos del Sign-in.
+Aplicacion de estilos al NewTask.vue
+
+📚 10/10: Lunes: Termino el Nav-bar; faltaba añadir el email del usuario que se registra, quitando la parte de "@gmail.com".
+Por la tarde consigo la funcionalidad del botón "Edit Task" del NewItem.vue, falta aplicarle el CSS.
+También rediseño general del Home.vue al no gustarme del todo el camino por el que estaba yendo.
+
+📚 11/10 Martes: Deploy en Vercel.
+Creación del Footer tanto Template como Style.
+Aplicacion de estilos en el TaskItem.
+Por la tarde tengo consulta médica, me ausento un par de horas.
+
+📚 12/10 Miercoles:
+
+📚 13/10 Jueves:
+
+📚 14/10 Viernes:
