@@ -57,7 +57,7 @@ function addNewTask() {
 
 <style>
 .addTask {
-  color: orange;
+  color: black;
 }
 .add {
   display: flex;
@@ -70,6 +70,8 @@ function addNewTask() {
   padding: 10px 10px 10px 10px;
   width: 400px;
   border-radius: 10px;
+  border: none;
+  box-shadow: 10px 10px 10px;
 }
 
 .button-87 {

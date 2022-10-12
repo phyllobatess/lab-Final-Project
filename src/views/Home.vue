@@ -19,6 +19,7 @@
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script setup>
@@ -59,7 +60,8 @@ async function editFather(title, description, id) {
 
 <style scoped>
 * {
-  background-color: #f2f4fc;
+  margin-bottom: 0px;
+  /* background-color: #f2f4fc; */
 }
 .newTask {
   margin-top: 5%;
@@ -75,9 +77,15 @@ async function editFather(title, description, id) {
 }
 
 .fondo {
-  background-color: #f2f4fc;
-  height: 100%;
+  /* background-color: #f2f4fc; */
+  background-image: url("img/texturablanco.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px 30px;
+  color: black;
+  height: 60%;
 }
+
 .nav {
   position: fixed;
   top: 0;
