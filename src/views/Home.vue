@@ -78,7 +78,7 @@ async function editFather(title, description, id) {
 
 .fondo {
   /* background-color: #f2f4fc; */
-  background-image: url("img/texturablanco.jpg");
+  background-image: url("/img/texturablanco.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0px 30px;

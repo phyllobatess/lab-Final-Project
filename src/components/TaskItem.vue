@@ -3,10 +3,15 @@
     <div class="centro">
       <img class="taskImg" src="/img/descarga.png" alt="task" />
 
-      <p class="titulo">{{ task.title }}</p>
+      <p :class="task.is_complete ? 'titulo completed' : 'titulo'">
+        {{ task.title }}
+      </p>
     </div>
-    <p class="descripcion">{{ task.description }}</p>
-    <p>{{ task.is_complete }}</p>
+
+    <p :class="task.is_complete ? 'descripcion completed' : 'descripcion'">
+      {{ task.description }}
+    </p>
+    <!-- <p>{{ task.is_complete }}</p> -->
     <div class="buttonEdit" v-if="readyForEdit">
       <input
         class="button-17"
@@ -64,6 +69,7 @@ function deleteTask() {
 
 function completeTask() {
   emits("completeChild", props.task.id);
+
   // console.log("I have been clicked to chedk complete");
 }
 
@@ -72,7 +78,7 @@ function editTask() {
   readyForEdit.value = false;
   // console.log("Prueba edit");
 }
-
+//Funcion que se utiliza para el boton edit, nos cambia el valor de la variable boolean a true para retornar al punto inial una vez se cambian title y descript.
 function changeParams() {
   readyForEdit.value = true;
 }
@@ -82,9 +88,7 @@ function changeParams() {
 * {
   background-color: white;
 }
-/* .boxEdit {
-  
-} */
+
 .button {
   padding: 5px 5px 0px 5px;
   margin-right: 5px;
@@ -95,6 +99,10 @@ function changeParams() {
 .buttonEdit {
   display: flex;
   justify-content: space-evenly;
+}
+
+.completed {
+  text-decoration: line-through;
 }
 
 .flex {
@@ -112,7 +120,7 @@ function changeParams() {
   align-items: center;
 }
 .titulo {
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 2px;
   margin-top: 5px;
   display: flex;
@@ -120,7 +128,8 @@ function changeParams() {
 }
 
 .descripcion {
-  font-size: 20px;
+  font-size: 18px;
+
   margin-bottom: 0px;
   margin-top: 0px;
 }
@@ -148,9 +157,9 @@ function changeParams() {
   display: inline-flex;
   fill: currentcolor;
   font-family: "Google Sans", Roboto, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 500;
-  height: 35px;
+  height: 30px;
   justify-content: center;
   letter-spacing: 0.25px;
   line-height: normal;
@@ -158,7 +167,7 @@ function changeParams() {
   overflow: visible;
   padding: 2px 24px;
   position: relative;
-  text-align: center;
+  text-align: start;
   text-transform: none;
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;

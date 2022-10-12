@@ -8,7 +8,7 @@
     </address>
     <img class="img" src="/img/corona.jpeg" alt="coronaimg" />
 
-    <ul>
+    <ul class="ul">
       <li><a href="#"> Twitter </a></li>
       <li><a href="#"> Facebook </a></li>
       <li><a href="#"> Instagram </a></li>
@@ -22,6 +22,11 @@
 .img {
   height: 70px;
 }
+.ul {
+  list-style: none;
+  text-decoration: none;
+}
+
 .footer {
   font-size: 15px;
   text-align: center;
