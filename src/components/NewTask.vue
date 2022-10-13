@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1 class="addTask">Add a New Task</h1>
+    <div class="media">
+      <h1 class="addTask">Add a New Task</h1>
+    </div>
 
     <div class="add">
       <div>
@@ -11,12 +13,15 @@
           placeholder="Task name"
         />
       </div>
-      <input
-        class="enter"
-        v-model="description"
-        type="text"
-        placeholder="Task's description"
-      />
+      <div>
+        <input
+          class="enter"
+          v-model="description"
+          type="text"
+          placeholder="Task's description"
+        />
+      </div>
+
       <div>
         <button class="button-87" role="button" @click.prevent="addNewTask">
           Add
@@ -58,6 +63,11 @@ function addNewTask() {
 </script>
 
 <style>
+@media screen and (max-width: 768px) {
+  .media h1 {
+    margin-top: 30%;
+  }
+}
 .addTask {
   color: black;
   margin-top: 40px;
@@ -71,7 +81,6 @@ function addNewTask() {
 .enter {
   margin: 2px 2px 2px 2px;
   padding: 10px 10px 10px 10px;
-  width: 400px;
   border-radius: 10px;
   border: none;
   box-shadow: 10px 10px 10px;

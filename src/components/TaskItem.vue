@@ -92,8 +92,9 @@ const emits = defineEmits([
 const readyForEdit = ref(false);
 const newTitle = ref(""); // variables que nos creamos para añadir los nuevos valores de titulo y descripcion al hacer funcion EDIT.
 const newDescription = ref("");
+//variable que guarda el valor booleanico del estado complete/uncomplete de la tarea
 const isComplete = ref(props.task.is_complete);
-
+// funcion que cambia el valor de la variable anterior, se utilizará para ocultar los botones de edit/eliminate
 function toggleIsComplete() {
   isComplete.value = !isComplete.value;
 }
@@ -135,6 +136,7 @@ function changeParams() {
 .arrow {
   height: 30px;
 }
+/* clase que oculta los botones edit/eliminate: */
 .hidebutton {
   display: none;
 }

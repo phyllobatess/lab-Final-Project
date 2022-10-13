@@ -100,9 +100,9 @@ async function editFather(title, description, id) {
 }
 
 .taskItem {
-  margin-top: 5%;
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-top: 2%;
+  margin-right: 18%;
+  margin-left: 18%;
 }
 </style>
 

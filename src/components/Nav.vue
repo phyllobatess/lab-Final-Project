@@ -53,6 +53,18 @@ const logOut = async () => {
 * {
   background-color: white;
 }
+@media screen and (max-width: 768px) {
+  .email img {
+    display: none;
+  }
+  .email p {
+    display: none;
+  }
+  .logOutButton {
+    width: auto;
+  }
+}
+
 .icono {
   margin-right: 9px;
   height: 35px;
