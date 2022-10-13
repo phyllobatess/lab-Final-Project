@@ -69,6 +69,11 @@ async function editFather(title, description, id) {
   margin-bottom: 0px;
   /* background-color: #f2f4fc; */
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Source+Sans+Pro&family=Ubuntu&display=swap");
+* {
+  font-family: "Ubuntu", sans-serif;
+}
 .newTask {
   margin-top: 10%;
   display: flex;

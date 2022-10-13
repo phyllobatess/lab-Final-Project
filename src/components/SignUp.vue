@@ -37,8 +37,8 @@
           v-model="confirmPassword"
           id="confirmPassword"
         />
+        <button class="signInButton" type="submit">Sign Up</button>
       </div>
-      <button class="signInButton" type="submit">Sign Up</button>
       <p class="">
         <span class="textDont">Have an account? </span>
         <PersonalRouter :route="route" :buttonText="buttonText" />
@@ -47,7 +47,7 @@
   </div>
 
   <div>
-    <img class="escritorioImg" src="/img/iStock-869283118.jpg" alt="" />
+    <img class="escritorioImg" src="/img/iStock-869283118.jpg" alt="register" />
   </div>
 </template>
 
@@ -93,9 +93,31 @@ async function signUp() {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Source+Sans+Pro&family=Ubuntu&display=swap");
 * {
-  font-family: "Abyssinica SIL", serif;
+  font-family: "Ubuntu", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .escritorioImg {
+    display: none;
+  }
+  .start img {
+    height: 20%;
+    width: 20%;
+    margin-top: 5%;
+    margin-left: 20%;
+  }
+  .start div {
+    font-size: 200%;
+  }
+  .email input {
+    width: 80%;
+  }
+  .email button {
+    width: 40%;
+    margin-left: 20%;
+  }
 }
 
 .start {

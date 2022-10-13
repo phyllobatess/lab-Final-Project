@@ -87,7 +87,7 @@ function addNewTask() {
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
   border: none;
-  box-shadow: 10px 10px 10px;
+  box-shadow: 5px 4px 2px 1px;
 }
 
 .button-87 {

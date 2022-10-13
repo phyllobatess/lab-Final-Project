@@ -26,7 +26,7 @@
           id="email"
         />
       </div>
-      <div class="mb-4">
+      <div class="email">
         <label class="" for="">Password</label>
 
         <div class="">
@@ -46,9 +46,9 @@
             />
           </span>
         </div>
+        <button class="signInButton" type="submit">Sign In</button>
       </div>
 
-      <button class="signInButton" type="submit">Sign In</button>
       <p class="">
         <span class="textDont">Don’t have an account? </span>
 
@@ -56,7 +56,7 @@
       </p>
     </form>
   </div>
-  <div>
+  <div class="escritorio">
     <img class="escritorioImg" src="/img/escritorio.jpg" alt="Image Sign-In" />
   </div>
 </template>
@@ -110,11 +110,32 @@ const signIn = async () => {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Source+Sans+Pro&family=Ubuntu&display=swap");
 * {
-  font-family: "Abyssinica SIL", serif;
+  font-family: "Ubuntu", sans-serif;
 }
+@media screen and (max-width: 768px) {
+  .escritorio {
+    display: none;
+  }
+  .start img {
+    height: 20%;
+    width: 20%;
+    margin-top: 8%;
+    margin-left: 40%;
+  }
+  .start div div {
+    font-size: 200%;
+  }
+  .email input {
+    width: 90%;
+  }
 
+  .email button {
+    width: 50%;
+    margin-left: 30%;
+  }
+}
 .start {
   display: flex;
   flex-direction: column;
@@ -157,7 +178,7 @@ const signIn = async () => {
 }
 
 .placeholder {
-  width: 425px;
+  width: 30%;
   margin-bottom: 20px;
   box-shadow: 2px 2px 2px 4px #57699a;
   border: 0;
@@ -169,7 +190,7 @@ const signIn = async () => {
 .signInButton {
   margin-top: 25px;
   margin-bottom: 20px;
-  width: 448px;
+  width: 32%;
   background-color: #57699a;
   color: white;
   border: 0px;
@@ -194,7 +215,7 @@ const signIn = async () => {
   margin-left: 10vw;
 }
 .textDont {
-  margin-left: 80px;
+  margin-left: 5%;
   opacity: 0.6;
 }
 </style>
