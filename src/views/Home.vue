@@ -70,10 +70,11 @@ async function editFather(title, description, id) {
   /* background-color: #f2f4fc; */
 }
 .newTask {
-  margin-top: 5%;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 5%;
 }
 .container {
   display: flex;

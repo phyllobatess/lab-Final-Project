@@ -41,4 +41,13 @@
 
   border-top: 5px double #57699a;
 }
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 0 0 0 0;
+  }
+  .background ul {
+    display: none;
+  }
+}
 </style>

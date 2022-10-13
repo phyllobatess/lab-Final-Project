@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="media">
-      <h1 class="addTask">Add a New Task</h1>
+      <!-- <h1 class="addTask">Add a New Task</h1> -->
     </div>
 
     <div class="add">
@@ -24,7 +24,7 @@
 
       <div>
         <button class="button-87" role="button" @click.prevent="addNewTask">
-          Add
+          Add task
         </button>
       </div>
     </div>
@@ -64,8 +64,11 @@ function addNewTask() {
 
 <style>
 @media screen and (max-width: 768px) {
-  .media h1 {
-    margin-top: 30%;
+  .add {
+    margin-top: 80px;
+  }
+  .enter {
+    margin-top: 20%;
   }
 }
 .addTask {
@@ -76,6 +79,7 @@ function addNewTask() {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* margin-top: 5%; */
 }
 
 .enter {
