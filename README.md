@@ -40,8 +40,9 @@ Creación del Footer tanto Template como Style.
 Aplicacion de estilos en el TaskItem.
 Por la tarde tengo consulta médica, me ausento un par de horas.
 
-📚 12/10 Miercoles:
+📚 12/10 Miercoles: Trabajo en la funcionalidad del boton "Validate" de forma que nos permita tachar todo el texto de titulo y descripcion y que a su vez inhabilite los botones del "Edit" y el "Eliminate" mientras la tarea está en estado de "Completada".
+Tambien hago la funcionalidad de poder volver a hacer click en el botón de validar para "desvalidar" la tarea.
 
-📚 13/10 Jueves:
+📚 13/10 Jueves: Responsive design de toda la web.
 
-📚 14/10 Viernes:
+📚 14/10 Viernes: Google slides y preparar la presentación.

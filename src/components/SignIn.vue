@@ -133,7 +133,7 @@ const signIn = async () => {
 
   .email button {
     width: 50%;
-    margin-left: 30%;
+    margin-left: 25%;
   }
 }
 .start {

@@ -1,18 +1,20 @@
 <template>
   <section class="white-background footer">
-    <address>
-      tasKing <br />
-      557 Carrer Independencia, <br />
-      08026 Barcelona, <br />
-      Spain <br />
-    </address>
-    <img class="img" src="/img/corona.jpeg" alt="coronaimg" />
+    <div>
+      <address>
+        tasKing <br />
+        557 Carrer Independencia, <br />
+        08026 Barcelona, <br />
+        Spain <br />
+      </address>
+    </div>
+    <div>
+      <h1>© 2021-2022 tasKing inc.</h1>
+    </div>
 
-    <ul class="ul">
-      <li><a href="#"> Twitter </a></li>
-      <li><a href="#"> Facebook </a></li>
-      <li><a href="#"> Instagram </a></li>
-    </ul>
+    <div>
+      <img class="img" src="/img/corona.jpeg" alt="coronaimg" />
+    </div>
   </section>
 </template>
 
@@ -25,6 +27,8 @@
 .ul {
   list-style: none;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
@@ -40,6 +44,10 @@
   background-color: white;
 
   border-top: 5px double #57699a;
+}
+.instaImg {
+  width: 5%;
+  margin: 0 0 0 0;
 }
 
 @media screen and (max-width: 768px) {
